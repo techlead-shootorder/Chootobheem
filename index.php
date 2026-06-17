@@ -720,9 +720,9 @@ $nav_links = [
     <div class="max-w-7xl mx-auto px-6 py-8 border-t border-white/10">
       <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-400">
         <div class="flex flex-wrap items-center gap-3 text-left">
-          <a href="#" class="hover:text-white transition-colors">Terms and Conditions</a>
+          <a href="terms-and-conditions.php" class="hover:text-white transition-colors">Terms and Conditions</a>
           <span class="text-white/40">|</span>
-          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="privacy-policy.php" class="hover:text-white transition-colors">Privacy Policy</a>
         </div>
         <div class="text-center w-full md:w-auto text-gray-500">
           © 2026 Chhota Bheem Family Cafe. All rights reserved.
