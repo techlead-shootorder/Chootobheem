@@ -196,11 +196,9 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
             <div class="flex items-center justify-between gap-1 mb-3">
               <div class="flex-1 h-2 rounded-full bg-brand-orange"></div>
               <div class="flex-1 h-2 rounded-full bg-gray-300"></div>
-              <div class="flex-1 h-2 rounded-full bg-gray-300"></div>
-              <div class="flex-1 h-2 rounded-full bg-gray-300"></div>
             </div>
             <div class="text-right text-sm font-body font-semibold text-brand-orange">
-              <span id="currentStep">1</span>/4
+              <span id="currentStep">1</span>/2
             </div>
           </div>
 
@@ -242,7 +240,7 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
             </div>
           </div>
 
-          <!-- Step 2: Email & City -->
+          <!-- Step 2: Email, City & FOCO Acknowledgment -->
           <div id="step2" class="step-form space-y-4 hidden">
             <h2 class="font-heading text-2xl font-bold text-brand-dark mb-6">Tell Us More</h2>
 
@@ -285,13 +283,8 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
                 <option value="Jaipur">Jaipur</option>
               </select>
             </div>
-          </div>
 
-          <!-- Step 3: FOCO Acknowledgment -->
-          <div id="step3" class="step-form space-y-6 hidden">
-            <h2 class="font-heading text-2xl font-bold text-brand-dark mb-6">Acknowledge Terms</h2>
-
-            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 mt-4">
               <label class="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" id="focoAcknowledgment" required
                   class="w-5 h-5 mt-0.5 rounded border-gray-300 text-brand-orange focus:ring-brand-orange cursor-pointer" />
@@ -300,14 +293,6 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
                 </span>
               </label>
             </div>
-          </div>
-
-          <!-- Step 4: Review & Submit (Hidden but ready) -->
-          <div id="step4" class="step-form space-y-4 hidden">
-            <h2 class="font-heading text-2xl font-bold text-brand-dark mb-6">Review & Submit</h2>
-            <p class="font-body text-sm text-gray-600">
-              Thank you for your interest! Click submit to complete your application.
-            </p>
           </div>
 
           <!-- Navigation Buttons -->
@@ -765,7 +750,7 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
     const progressBars = document.querySelectorAll('.flex-1.h-2');
 
     let currentStep = 1;
-    const totalSteps = 4;
+    const totalSteps = 2;
 
     function showStep(stepNum) {
       steps.forEach((step, index) => {
@@ -810,6 +795,7 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
         case 2:
           const email = document.getElementById('email').value.trim();
           const city = document.getElementById('city').value;
+          const focoCheckbox = document.getElementById('focoAcknowledgment').checked;
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
           if (!email || !emailRegex.test(email)) {
@@ -820,10 +806,6 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
             alert('Please select a preferred city');
             return false;
           }
-          return true;
-
-        case 3:
-          const focoCheckbox = document.getElementById('focoAcknowledgment').checked;
           if (!focoCheckbox) {
             alert('Please acknowledge the FOCO terms to proceed');
             return false;
