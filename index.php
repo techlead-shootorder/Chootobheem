@@ -156,10 +156,10 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
   <section class="relative bg-brand-cream min-h-screen flex items-center overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('images/Hero Section.png');"></div>
     <!-- <div class="absolute inset-0 bg-brand-dark/65"></div> -->
-    <div class="relative max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="relative max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
 
       <!-- Left: Headline + Stats -->
-      <div class="space-y-8 text-white">
+      <div class="space-y-8 text-white lg:col-span-2">
         <div>
 
           <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white !leading-[80px]">
