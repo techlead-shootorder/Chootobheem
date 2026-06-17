@@ -163,7 +163,7 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
         <div>
 
           <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-            A Scalable Family Cafe <em class="italic-orange">Franchise Opportunity</em> in India
+            A Scalable Family Cafe <span class="text-brand-orange">Franchise Opportunity</span> in India
           </h1>
           <p class="font-body text-gray-100 mt-5 text-base leading-relaxed max-w-md">
             One integrated dining, play, and celebration experience.
