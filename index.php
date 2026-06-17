@@ -7,7 +7,7 @@ $nav_links = [
   "Investment" => "investment",
   "Revenue" => "revenue",
   "Why Bheem" => "why",
-  "Backing" => "backing"
+  "EBG" => "backing"
 ];
 ?>
 <!DOCTYPE html>
