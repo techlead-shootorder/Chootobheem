@@ -258,7 +258,7 @@ $nav_links = [
     <footer class="bg-brand-dark text-white">
         <div class="max-w-7xl mx-auto px-6 py-6">
             
-            <div class="border-t border-gray-700 mt-8 pt-8">
+            <div class="border-t border-gray-700 mt-1">
                 <p class="font-body text-sm text-gray-300 text-center">
                     &copy; 2026 Chhota Bheem Family Cafe. All rights reserved.
                 </p>
