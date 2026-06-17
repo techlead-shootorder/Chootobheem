@@ -81,6 +81,30 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
       opacity: 0;
       transition: opacity 0.3s ease;
     }
+
+    /* Custom select dropdown styling */
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23E8742A' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+
+    /* Step form animation */
+    .step-form {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
@@ -163,55 +187,153 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
         </div>
       </div>
 
-      <!-- Right: Partner Form -->
+      <!-- Right: Multi-Step Partner Form -->
       <div class="bg-white rounded-3xl shadow-xl p-8 max-w-md ml-auto w-full">
-        <h2 class="font-heading text-3xl font-bold text-brand-dark mb-1">
-          Partner with India's<br />
-          fast-growing cafe<br />
-          network
-        </h2>
-        <p class="font-body text-sm text-brand-brown mb-6">Share your details to receive the Investor<br /> prospectus.</p>
+        <form id="franchiseForm" class="space-y-6">
 
-        <form class="space-y-4">
-          <div>
-            <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-1">Full Name</label>
-            <input type="text" placeholder="Your Name"
-              class="w-full border border-[#DBC2B1] rounded-xl px-4 py-3 font-body text-sm
-                        focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent
-                        placeholder-gray-400 transition" />
+          <!-- Step Indicator -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between gap-1 mb-3">
+              <div class="flex-1 h-2 rounded-full bg-brand-orange"></div>
+              <div class="flex-1 h-2 rounded-full bg-gray-300"></div>
+              <div class="flex-1 h-2 rounded-full bg-gray-300"></div>
+              <div class="flex-1 h-2 rounded-full bg-gray-300"></div>
+            </div>
+            <div class="text-right text-sm font-body font-semibold text-brand-orange">
+              <span id="currentStep">1</span>/4
+            </div>
           </div>
-          <div>
-            <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-1">Email</label>
-            <input type="email" placeholder="Your Email"
-              class="w-full border border-[#DBC2B1] rounded-xl px-4 py-3 font-body text-sm
-                        focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent
-                        placeholder-gray-400 transition" />
+
+          <!-- Step 1: Full Name & Mobile Number -->
+          <div id="step1" class="step-form space-y-4">
+            <h2 class="font-heading text-2xl font-bold text-brand-dark mb-6">Start Your Franchise Journey</h2>
+
+            <div>
+              <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-2">
+                <svg class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                Full Name
+              </label>
+              <input type="text" id="fullName" placeholder="Webmasters ShootOrder" required
+                class="w-full border border-[#DBC2B1] rounded-xl px-4 py-3 font-body text-sm
+                          focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent
+                          placeholder-gray-400 transition" />
+            </div>
+
+            <div>
+              <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-2">
+                <svg class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                Mobile Number
+              </label>
+              <div class="flex gap-2">
+                <select id="countryCode" class="w-20 border border-[#DBC2B1] rounded-xl px-3 py-3 font-body text-sm
+                            focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent">
+                  <option value="+91" selected>🇮🇳 +91</option>
+                </select>
+                <input type="tel" id="mobileNumber" placeholder="1321231231123" required
+                  class="flex-1 border border-[#DBC2B1] rounded-xl px-4 py-3 font-body text-sm
+                            focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent
+                            placeholder-gray-400 transition" />
+              </div>
+            </div>
           </div>
-          <div>
-            <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-1">Phone Number</label>
-            <input type="tel" placeholder="Your Number"
-              class="w-full border border-[#DBC2B1] rounded-xl px-4 py-3 font-body text-sm
-                        focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent
-                        placeholder-gray-400 transition" />
+
+          <!-- Step 2: Email & City -->
+          <div id="step2" class="step-form space-y-4 hidden">
+            <h2 class="font-heading text-2xl font-bold text-brand-dark mb-6">Tell Us More</h2>
+
+            <div>
+              <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-2">
+                <svg class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Email Address
+              </label>
+              <input type="email" id="email" placeholder="webmasters@shootorder.in" required
+                class="w-full border border-[#DBC2B1] rounded-xl px-4 py-3 font-body text-sm
+                          focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent
+                          placeholder-gray-400 transition" />
+            </div>
+
+            <div>
+              <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-2">
+                <svg class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Preferred City
+              </label>
+              <select id="city" required
+                class="w-full border border-[#DBC2B1] rounded-xl px-4 py-3 font-body text-sm
+                          focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent
+                          placeholder-gray-400 transition appearance-none bg-white">
+                <option value="">Select a city</option>
+                <option value="Bhubaneswar">Bhubaneswar</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Pune">Pune</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Jaipur">Jaipur</option>
+              </select>
+            </div>
           </div>
-          <div>
-            <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-1">City</label>
-            <input type="text" placeholder="Your City"
-              class="w-full border border-[#DBC2B1] rounded-xl px-4 py-3 font-body text-sm
-                        focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent
-                        placeholder-gray-400 transition" />
+
+          <!-- Step 3: FOCO Acknowledgment -->
+          <div id="step3" class="step-form space-y-6 hidden">
+            <h2 class="font-heading text-2xl font-bold text-brand-dark mb-6">Acknowledge Terms</h2>
+
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" id="focoAcknowledgment" required
+                  class="w-5 h-5 mt-0.5 rounded border-gray-300 text-brand-orange focus:ring-brand-orange cursor-pointer" />
+                <span class="font-body text-sm text-gray-700">
+                  I acknowledge that this is a <span class="font-bold text-brand-orange">FOCO (Franchise Owned, Company Operated)</span> opportunity
+                </span>
+              </label>
+            </div>
           </div>
-          <button type="submit"
-            class="w-full bg-brand-orange text-brand-brown font-body font-bold text-sm py-3.5 rounded-xl
-                       hover:bg-brand-orange-dark transition-colors flex items-center justify-center gap-2 mt-2">
-            Next
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14" />
-              <path d="M13 6l6 6-6 6" />
-            </svg>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+
+          <!-- Step 4: Review & Submit (Hidden but ready) -->
+          <div id="step4" class="step-form space-y-4 hidden">
+            <h2 class="font-heading text-2xl font-bold text-brand-dark mb-6">Review & Submit</h2>
+            <p class="font-body text-sm text-gray-600">
+              Thank you for your interest! Click submit to complete your application.
+            </p>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex gap-3 mt-8">
+            <button type="button" id="backBtn" class="hidden w-24 bg-white border-2 border-gray-300 text-brand-dark font-body font-semibold text-sm py-3 rounded-3xl
+                              hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+              Back
+            </button>
+            <button type="button" id="nextBtn" class="flex-1 bg-gradient-to-r from-brand-orange to-brand-orange-light text-white font-body font-bold text-sm py-3.5 rounded-3xl
+                              hover:from-brand-orange-dark hover:to-brand-orange transition-colors flex items-center justify-center gap-2 shadow-lg">
+              Next Step
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button type="submit" id="submitBtn" class="hidden flex-1 bg-gradient-to-r from-brand-orange to-brand-orange-light text-white font-body font-bold text-sm py-3.5 rounded-3xl
+                              hover:from-brand-orange-dark hover:to-brand-orange transition-colors flex items-center justify-center gap-2 shadow-lg">
+              Submit Application
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </form>
       </div>
 
@@ -630,6 +752,135 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
         this.classList.add('active');
       });
     });
+  </script>
+
+  <!-- Multi-step form script -->
+  <script>
+    const form = document.getElementById('franchiseForm');
+    const steps = document.querySelectorAll('.step-form');
+    const nextBtn = document.getElementById('nextBtn');
+    const backBtn = document.getElementById('backBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const currentStepSpan = document.getElementById('currentStep');
+    const progressBars = document.querySelectorAll('.flex-1.h-2');
+
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    function showStep(stepNum) {
+      steps.forEach((step, index) => {
+        step.classList.toggle('hidden', index + 1 !== stepNum);
+      });
+
+      // Update progress indicator
+      progressBars.forEach((bar, index) => {
+        if (index < stepNum) {
+          bar.classList.remove('bg-gray-300');
+          bar.classList.add('bg-brand-orange');
+        } else {
+          bar.classList.remove('bg-brand-orange');
+          bar.classList.add('bg-gray-300');
+        }
+      });
+
+      currentStepSpan.textContent = stepNum;
+
+      // Toggle buttons
+      backBtn.classList.toggle('hidden', stepNum === 1);
+      nextBtn.classList.toggle('hidden', stepNum === totalSteps);
+      submitBtn.classList.toggle('hidden', stepNum !== totalSteps);
+    }
+
+    function validateStep(stepNum) {
+      switch(stepNum) {
+        case 1:
+          const fullName = document.getElementById('fullName').value.trim();
+          const mobileNumber = document.getElementById('mobileNumber').value.trim();
+
+          if (!fullName) {
+            alert('Please enter your full name');
+            return false;
+          }
+          if (!mobileNumber || mobileNumber.length < 10) {
+            alert('Please enter a valid mobile number');
+            return false;
+          }
+          return true;
+
+        case 2:
+          const email = document.getElementById('email').value.trim();
+          const city = document.getElementById('city').value;
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (!email || !emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return false;
+          }
+          if (!city) {
+            alert('Please select a preferred city');
+            return false;
+          }
+          return true;
+
+        case 3:
+          const focoCheckbox = document.getElementById('focoAcknowledgment').checked;
+          if (!focoCheckbox) {
+            alert('Please acknowledge the FOCO terms to proceed');
+            return false;
+          }
+          return true;
+
+        default:
+          return true;
+      }
+    }
+
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (validateStep(currentStep)) {
+        if (currentStep < totalSteps) {
+          currentStep++;
+          showStep(currentStep);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    });
+
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (validateStep(currentStep)) {
+        // Collect form data
+        const formData = {
+          fullName: document.getElementById('fullName').value,
+          mobileNumber: document.getElementById('countryCode').value + document.getElementById('mobileNumber').value,
+          email: document.getElementById('email').value,
+          city: document.getElementById('city').value,
+          focoAcknowledged: document.getElementById('focoAcknowledgment').checked
+        };
+
+        console.log('Form submitted:', formData);
+        alert('Thank you for your interest! We will contact you soon at ' + formData.email);
+
+        // Reset form
+        form.reset();
+        currentStep = 1;
+        showStep(currentStep);
+      }
+    });
+
+    // Initialize
+    showStep(1);
   </script>
 
 </body>
