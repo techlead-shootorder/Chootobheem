@@ -330,12 +330,9 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
   <section class="bg-brand-cream py-20" id="franchise">
     <div class="max-w-7xl mx-auto px-6">
 
-      <!-- Section Label -->
-      <p class="font-body text-xs font-semibold uppercase tracking-widest text-center text-brand-brown mb-2">
-        Franchise Opportunities
-      </p>
+      
       <h2 class="font-heading text-4xl font-bold text-center text-brand-dark mb-8">
-        Across India
+        Franchise Opportunities Across India
       </h2>
 
       <!-- Toggle Tabs -->
