@@ -212,32 +212,7 @@ $nav_links = [
     <!-- FOOTER -->
     <footer class="bg-brand-dark text-white py-12">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="font-heading text-lg font-bold mb-4">Chhota Bheem</h3>
-                    <p class="font-body text-sm text-gray-300">A scalable family cafe franchise opportunity in India.</p>
-                </div>
-                <div>
-                    <h4 class="font-body font-semibold mb-4 text-brand-orange">Quick Links</h4>
-                    <ul class="space-y-2 font-body text-sm text-gray-300">
-                        <li><a href="index.php" class="hover:text-brand-orange transition-colors">Home</a></li>
-                        <li><a href="terms-and-conditions.php" class="hover:text-brand-orange transition-colors">Terms</a></li>
-                        <li><a href="privacy-policy.php" class="hover:text-brand-orange transition-colors">Privacy</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-body font-semibold mb-4 text-brand-orange">Franchise</h4>
-                    <ul class="space-y-2 font-body text-sm text-gray-300">
-                        <li><a href="index.php#franchise" class="hover:text-brand-orange transition-colors">Franchise Info</a></li>
-                        <li><a href="index.php#investment" class="hover:text-brand-orange transition-colors">Investment</a></li>
-                        <li><a href="index.php#revenue" class="hover:text-brand-orange transition-colors">Revenue</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-body font-semibold mb-4 text-brand-orange">Connect</h4>
-                    <p class="font-body text-sm text-gray-300">franchise@chhotabheemcafe.com</p>
-                </div>
-            </div>
+            
             <div class="border-t border-gray-700 mt-8 pt-8">
                 <p class="font-body text-sm text-gray-300 text-center">
                     &copy; 2026 Chhota Bheem Family Cafe. All rights reserved.
