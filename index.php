@@ -188,7 +188,7 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
       </div>
 
       <!-- Right: Multi-Step Partner Form -->
-      <div class="bg-white rounded-3xl shadow-xl p-8 max-w-md ml-auto w-full">
+      <div class="bg-white rounded-3xl shadow-xl p-8 max-w-lg ml-auto w-full">
         <form id="franchiseForm" class="space-y-6">
 
           <!-- Step Indicator -->
