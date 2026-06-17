@@ -126,7 +126,7 @@ $nav_links = [
 
       <!-- Logo -->
       <div class="flex items-center gap-3">
-        <a href="#franchise" class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-3">
           <img src="images/bheem_logo.png" alt="Chhota Bheem Family Cafe" class="w-12 h-12 object-contain" />
 
         </a>
