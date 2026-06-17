@@ -368,7 +368,7 @@ $nav_links = [
           'label' => 'Play',
           'subtitle' => 'Entertainment',
           'icon' => 'images/play-icon.png',
-          'image' => 'images/play.png',
+          'image' => 'images/play-new.png',
         ],
         [
           'label' => 'Learn',
