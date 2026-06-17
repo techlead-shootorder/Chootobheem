@@ -177,11 +177,11 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
         <!-- Stats -->
         <div class="flex items-center gap-6">
           <div class="bg-white/10 backdrop-blur rounded-2xl px-6 py-4 shadow-sm text-center">
-            <p class="font-heading font-bold text-3xl text-white">15+</p>
+            <p class="font-heading font-bold text-3xl text-white">15<span class="text-2xl">+</span></p>
             <p class="font-body text-xs text-gray-200 mt-1 uppercase tracking-wide">Locations</p>
           </div>
           <div class="bg-white/10 backdrop-blur rounded-2xl px-6 py-4 shadow-sm text-center">
-            <p class="font-heading font-bold text-3xl text-white">4.8 ★</p>
+            <p class="font-heading font-bold text-3xl text-white">4.8 <span class="text-2xl">★</span></p>
             <p class="font-body text-xs text-gray-200 mt-1 uppercase tracking-wide">Rating</p>
           </div>
         </div>
