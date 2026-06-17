@@ -1,7 +1,14 @@
 <?php
 // Franchise Landing Page - Chhota Bheem Family Cafe
 $page_title = "Franchise Opportunity | Chhota Bheem Family Cafe";
-$nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Franchise"];
+$nav_links = [
+  "Franchise" => "franchise",
+  "Market" => "market",
+  "Investment" => "Investment",
+  "Revenue" => "revenue",
+  "Why Bheem" => "why",
+  "Backing" => "backing"
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,6 +107,7 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
         opacity: 0;
         transform: translateY(10px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -118,7 +126,7 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
 
       <!-- Logo -->
       <div class="flex items-center gap-3">
-        <a href="#" class="flex items-center gap-3">
+        <a href="#franchise" class="flex items-center gap-3">
           <img src="images/bheem_logo.png" alt="Chhota Bheem Family Cafe" class="w-12 h-12 object-contain" />
 
         </a>
@@ -126,17 +134,17 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
 
       <!-- Nav Links -->
       <nav class="hidden md:flex items-center gap-12">
-        <?php foreach ($nav_links as $link): ?>
-          <a href="#"
+        <?php foreach ($nav_links as $name => $id): ?>
+          <a href="#<?= $id ?>"
             class="font-body text-sm font-500 text-gray-700 hover:text-brand-orange transition-colors
-                  <?= $link === 'Franchise' ? 'text-brand-orange font-semibold border-b-2 border-brand-orange pb-0.5' : '' ?>">
-            <?= $link ?>
+                  <?= $name === 'Franchise' ? 'text-brand-orange font-semibold border-b-2 border-brand-orange pb-0.5' : '' ?>">
+            <?= $name ?>
           </a>
         <?php endforeach; ?>
       </nav>
 
       <!-- CTA Button -->
-      <a href="#"
+      <a href="#franchise"
         class="bg-brand-orange-light text-white font-body font-semibold text-sm px-5 py-2.5 rounded-full
               hover:bg-brand-orange-dark transition-colors shadow-[0_0_20px_rgba(232,116,42,0.35)] hover:shadow-[0_0_28px_rgba(232,116,42,0.55)]
               inline-flex items-center gap-2">
@@ -330,9 +338,9 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
   <section class="bg-brand-cream py-20" id="franchise">
     <div class="max-w-7xl mx-auto px-6">
 
-      
+
       <h2 class="font-heading text-4xl font-bold text-center text-brand-dark mb-8">
-        Franchise Opportunities Across India
+        Franchise Opportunities<br /> Across India
       </h2>
 
       <!-- Toggle Tabs -->
@@ -772,7 +780,7 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
     }
 
     function validateStep(stepNum) {
-      switch(stepNum) {
+      switch (stepNum) {
         case 1:
           const fullName = document.getElementById('fullName').value.trim();
           const mobileNumber = document.getElementById('mobileNumber').value.trim();
@@ -819,7 +827,10 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
         if (currentStep < totalSteps) {
           currentStep++;
           showStep(currentStep);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
         }
       }
     });
@@ -829,7 +840,10 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
       if (currentStep > 1) {
         currentStep--;
         showStep(currentStep);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       }
     });
 
