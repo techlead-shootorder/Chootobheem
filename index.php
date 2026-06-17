@@ -229,7 +229,7 @@ $nav_links = ["Experience", "Menu", "Membership", "Birthdays", "Locations", "Fra
               </label>
               <div class="flex gap-2">
                 <select id="countryCode" class="w-20 border border-[#DBC2B1] rounded-xl px-3 py-3 font-body text-sm
-                            focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent">
+                            focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent appearance-none bg-white">
                   <option value="+91" selected>🇮🇳 +91</option>
                 </select>
                 <input type="tel" id="mobileNumber" placeholder="1321231231123" required
