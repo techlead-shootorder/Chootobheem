@@ -674,7 +674,7 @@ $nav_links = [
 
           <!-- Left -->
           <div class="w-full lg:w-[35%] flex justify-center">
-            <div class="bg-white rounded-[24px] p-12 shadow-sm">
+            <div class="bg-white rounded-[24px]">
               <div class="flex items-center justify-center h-full">
                 <img src="images/ebg-footer-logo.png" alt="EBG Group Logo" class="w-full h-auto object-contain" />
               </div>
