@@ -374,19 +374,19 @@ $nav_links = [
           'label' => 'Learn',
           'subtitle' => 'Creative Discovery',
           'icon' => 'images/learn-icon.png',
-          'image' => 'images/learn.png',
+          'image' => 'images/learn-new.png',
         ],
         [
           'label' => 'Shop',
           'subtitle' => 'Retail & Merchandise',
           'icon' => 'images/shop-icon.png',
-          'image' => 'images/shop.png',
+          'image' => 'images/shop-new.png',
         ],
         [
           'label' => 'Celebrate',
           'subtitle' => 'Birthday & Events',
           'icon' => 'images/celebrate-icon.png',
-          'image' => 'images/celebrate.png',
+          'image' => 'images/celebrate-new.png',
         ],
       ];
       ?>
