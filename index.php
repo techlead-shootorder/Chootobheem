@@ -290,6 +290,44 @@ $nav_links = [
               </select>
             </div>
 
+            <div>
+              <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-2">
+                <svg class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M2 12h20" />
+                </svg>
+                Investment Budget
+              </label>
+              <select id="investmentBudget" required
+                class="w-full border border-[#DBC2B1] rounded-xl px-4 py-3 font-body text-sm
+                          focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent
+                          placeholder-gray-400 transition appearance-none bg-white">
+                <option value="">Select investment range</option>
+                <option value="1-1.25">₹1 Cr – ₹1.25 Cr</option>
+                <option value="1.25-1.5">₹1.25 Cr – ₹1.5 Cr</option>
+                <option value="1.5-2">₹1.5 Cr – ₹2 Cr</option>
+                <option value="2+">₹2 Cr+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-2">
+                <svg class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12h6M9 16h6M9 8h6" />
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" />
+                </svg>
+                Interested In
+              </label>
+              <select id="interestedIn" required
+                class="w-full border border-[#DBC2B1] rounded-xl px-4 py-3 font-body text-sm
+                          focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent
+                          placeholder-gray-400 transition appearance-none bg-white">
+                <option value="">Select franchise type</option>
+                <option value="compact">Compact Family Café</option>
+                <option value="flagship">Flagship Family Café</option>
+                <option value="consultation">Need Consultation</option>
+              </select>
+            </div>
+
             <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 mt-4">
               <label class="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" id="focoAcknowledgment" required
@@ -793,6 +831,8 @@ $nav_links = [
         case 2:
           const email = document.getElementById('email').value.trim();
           const city = document.getElementById('city').value;
+          const investmentBudget = document.getElementById('investmentBudget').value;
+          const interestedIn = document.getElementById('interestedIn').value;
           const focoCheckbox = document.getElementById('focoAcknowledgment').checked;
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -802,6 +842,14 @@ $nav_links = [
           }
           if (!city) {
             alert('Please select a preferred city');
+            return false;
+          }
+          if (!investmentBudget) {
+            alert('Please select your investment budget');
+            return false;
+          }
+          if (!interestedIn) {
+            alert('Please select which franchise type interests you');
             return false;
           }
           if (!focoCheckbox) {
@@ -852,6 +900,8 @@ $nav_links = [
           mobileNumber: document.getElementById('countryCode').value + document.getElementById('mobileNumber').value,
           email: document.getElementById('email').value,
           city: document.getElementById('city').value,
+          investmentBudget: document.getElementById('investmentBudget').value,
+          interestedIn: document.getElementById('interestedIn').value,
           focoAcknowledged: document.getElementById('focoAcknowledgment').checked
         };
 
