@@ -202,9 +202,10 @@ $nav_links = [
             <div class="flex items-center justify-between gap-1 mb-3">
               <div class="flex-1 h-2 rounded-full bg-brand-orange"></div>
               <div class="flex-1 h-2 rounded-full bg-gray-300"></div>
+              <div class="flex-1 h-2 rounded-full bg-gray-300"></div>
             </div>
             <div class="text-right text-sm font-body font-semibold text-brand-orange">
-              <span id="currentStep">1</span>/2
+              <span id="currentStep">1</span>/3
             </div>
           </div>
 
@@ -289,6 +290,11 @@ $nav_links = [
                 <option value="Jaipur">Jaipur</option>
               </select>
             </div>
+          </div>
+
+          <!-- Step 3: Investment Budget, Interested In & FOCO Acknowledgment -->
+          <div id="step3" class="step-form space-y-4 hidden">
+            <h2 class="font-heading text-2xl font-bold text-brand-dark mb-6">Your Investment Details</h2>
 
             <div>
               <label class="font-body text-sm font-semibold text-gray-600 uppercase tracking-wide block mb-2">
@@ -786,7 +792,7 @@ $nav_links = [
     const progressBars = document.querySelectorAll('.flex-1.h-2');
 
     let currentStep = 1;
-    const totalSteps = 2;
+    const totalSteps = 3;
 
     function showStep(stepNum) {
       steps.forEach((step, index) => {
@@ -831,9 +837,6 @@ $nav_links = [
         case 2:
           const email = document.getElementById('email').value.trim();
           const city = document.getElementById('city').value;
-          const investmentBudget = document.getElementById('investmentBudget').value;
-          const interestedIn = document.getElementById('interestedIn').value;
-          const focoCheckbox = document.getElementById('focoAcknowledgment').checked;
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
           if (!email || !emailRegex.test(email)) {
@@ -844,6 +847,13 @@ $nav_links = [
             alert('Please select a preferred city');
             return false;
           }
+          return true;
+
+        case 3:
+          const investmentBudget = document.getElementById('investmentBudget').value;
+          const interestedIn = document.getElementById('interestedIn').value;
+          const focoCheckbox = document.getElementById('focoAcknowledgment').checked;
+
           if (!investmentBudget) {
             alert('Please select your investment budget');
             return false;
