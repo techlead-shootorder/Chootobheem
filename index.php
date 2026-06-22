@@ -339,7 +339,7 @@ $nav_links = [
                 <input type="checkbox" id="focoAcknowledgment" required
                   class="w-5 h-5 mt-0.5 rounded border-gray-300 text-brand-orange focus:ring-brand-orange cursor-pointer" />
                 <span class="font-body text-sm text-gray-700">
-                  I acknowledge that this is a <span class="font-bold text-brand-orange">FOCO (Franchise Owned, Company Operated)</span> opportunity
+                  I acknowledge and agree to the <span class="font-bold text-brand-orange">terms, conditions, and operational structure</span> of the specific franchise model applied for.
                 </span>
               </label>
             </div>
