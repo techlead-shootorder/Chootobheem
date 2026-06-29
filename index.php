@@ -737,12 +737,6 @@ $nav_links = [
               across entertainment, hospitality, and franchise development to
               build scalable family destination formats across India.
             </p>
-
-            <a
-              href="#"
-              class="inline-flex items-center bg-brand-dark text-white px-8 py-4 rounded-full text-sm font-medium hover:opacity-90 transition">
-              About EBG Group
-            </a>
           </div>
 
         </div>
