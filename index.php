@@ -733,9 +733,7 @@ $nav_links = [
             </h2>
 
             <p class="font-body text-brand-brown text-lg leading-relaxed max-w-xl mb-8">
-              Developed in collaboration with EBG Group, combining expertise
-              across entertainment, hospitality, and franchise development to
-              build scalable family destination formats across India.
+              Developed in collaboration with EBG Group, a diversified business group focused on building and scaling consumer brands across India. With expertise in franchise development, retail expansion, operations, and business growth, EBG supports brands in creating structured, scalable franchise ecosystems, enabling partners to build sustainable and successful businesses.
             </p>
           </div>
 
